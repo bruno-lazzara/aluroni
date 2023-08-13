@@ -1,13 +1,17 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import 'normalize.css';
 import './index.css';
 import Cardapio from './pages/Cardapio';
+import Inicio from 'pages/Inicio';
+import { createRoot } from 'react-dom/client';
+import Router from 'routes';
 
-// eslint-disable-next-line react/no-deprecated
-ReactDOM.render(
+const componenteAtual = window.location.pathname === '/' ? <Inicio /> : <Cardapio />;
+
+const container = document.getElementById('root');
+const root = createRoot(container!);
+root.render(
     <React.StrictMode>
-        <Cardapio />
-    </React.StrictMode>,
-    document.getElementById('root')
+        <Router />
+    </React.StrictMode>
 );
