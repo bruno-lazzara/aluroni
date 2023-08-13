@@ -17,7 +17,7 @@ export default function Cardapio() {
             </nav>
             <header className={styles.header}>
                 <div className={styles.header__text}>
-                    A cada do código e da massa
+                    A casa do código e da massa
                 </div>
             </header>
             <section className={styles.cardapio}>
@@ -27,7 +27,7 @@ export default function Cardapio() {
                     <Filtros filtro={filtro} setFiltro={setFiltro} />
                     <Ordenador ordenador={ordenador} setOrdenador={setOrdenador} />
                 </div>
-                <Itens />
+                <Itens busca={busca} filtro={filtro} ordenador={ordenador} />
             </section>
         </main>
     )
